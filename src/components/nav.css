@@ -1,0 +1,35 @@
+nav{
+    
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content:flex-start;
+    flex:auto;
+    flex-direction: row;
+    color:"black";
+    background:#1976D3;
+    text-decoration: none;
+    box-shadow: 1px 2px 9px #0c2c4d;
+}
+.navItem {
+    text-decoration:'none';
+    color: black;
+}
+a{
+    color: white;
+    font-size: 20px;
+}
+a:hover{
+    color: rgb(0, 0, 0);
+}
+#nav1{
+    margin-left: 20px;
+}
+#nav2{
+
+    padding:0 50px;
+    flex: 1;
+    display: flex;
+    justify-content:space-between ;
+}
