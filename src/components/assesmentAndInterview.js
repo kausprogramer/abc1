@@ -1,6 +1,9 @@
 import { useCollapse } from 'react-collapsed'
 import './collapse.css';
-
+import { useRadioGroup } from '@mui/material/RadioGroup';
+import { Radio } from '@mui/material';
+import { RadioGroup } from '@mui/material';
+import { FormLabel } from '@mui/material';
 // import { addDoc } from 'firebase/firestore';
 // import { collection } from 'firebase/firestore';
 import * as React from 'react';
@@ -35,10 +38,11 @@ import {
   doc,
   where
 } from 'firebase/firestore';
-import { colors } from '@material-ui/core';
+import { colors,
+    useTheme, } from '@material-ui/core';
 
 function AssesmentAndInterview(props){
-
+    const theme=useTheme();
     const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
     const [values, setValues] = useState({
         name: "",
@@ -88,7 +92,7 @@ function AssesmentAndInterview(props){
             <div className="content">
                 <h5></h5>
                 <Box>
-                <Grid container spacing={2}>
+                <Grid container spacing={2} padding={2}>
                     <Grid item xs={12} md={6}>
                     <TextField
                   required
@@ -151,7 +155,32 @@ function AssesmentAndInterview(props){
                   autoComplete="date"
                 />
                     </Grid>
+                    
+                        <Grid  item xs={12} md={4}>
+                        <FormLabel id="demo-row-radio-buttons-group-label">Pass Matric/grade 12</FormLabel>
+                            <RadioGroup
+                                row
+                                aria-labelledby="demo-row-radio-buttons-group-label"
+                                name="row-radio-buttons-group"
+                            >
+                                <FormControlLabel value="Qualify" control={<Radio />} label="Qualify" />
+                                <FormControlLabel value="DNQ" control={<Radio />} label="DNQ" />
+                                
+                            </RadioGroup>
+                        </Grid>
+                        <Grid item xs={12} md={8}>
+                        <TextField
+                  required
+                  fullWidth
+                  id="date"
+                  label="Date"
+                  name="date"
+                  autoComplete="date"
+                />
                     </Grid>
+                    
+                    </Grid>
+
                 </Box>
             </div>
             </div>
