@@ -156,7 +156,7 @@ function AssesmentAndInterview(props){
                 />
                     </Grid>
                     
-                        <Grid  item xs={12} md={4}>
+                        <Grid  item xs={12} md={2}>
                         <FormLabel id="demo-row-radio-buttons-group-label">Pass Matric/grade 12</FormLabel>
                             <RadioGroup
                                 row
@@ -168,14 +168,76 @@ function AssesmentAndInterview(props){
                                 
                             </RadioGroup>
                         </Grid>
-                        <Grid item xs={12} md={8}>
+                        <Grid item xs={12} md={10}>
                         <TextField
-                  required
                   fullWidth
-                  id="date"
-                  label="Date"
-                  name="date"
-                  autoComplete="date"
+                  id="notes1"
+                  label="Notes"
+                  name="Notes"
+                  autoComplete="Notes"
+                />
+                    </Grid>
+                    <Grid  item xs={12} md={2}>
+                        <FormLabel id="demo-row-radio-buttons-group-label">Pass Matric/grade 12</FormLabel>
+                            <RadioGroup
+                                row
+                                aria-labelledby="demo-row-radio-buttons-group-label"
+                                name="row-radio-buttons-group"
+                            >
+                                <FormControlLabel value="Qualify" control={<Radio />} label="Qualify" />
+                                <FormControlLabel value="DNQ" control={<Radio />} label="DNQ" />
+                                
+                            </RadioGroup>
+                        </Grid>
+                        <Grid item xs={12} md={10}>
+                        <TextField
+                  fullWidth
+                  id="notes1"
+                  label="Notes"
+                  name="Notes"
+                  autoComplete="Notes"
+                />
+                    </Grid>
+                    <Grid  item xs={12} md={2}>
+                        <FormLabel id="demo-row-radio-buttons-group-label">Pass Matric/grade 12</FormLabel>
+                            <RadioGroup
+                                row
+                                aria-labelledby="demo-row-radio-buttons-group-label"
+                                name="row-radio-buttons-group"
+                            >
+                                <FormControlLabel value="Qualify" control={<Radio />} label="Qualify" />
+                                <FormControlLabel value="DNQ" control={<Radio />} label="DNQ" />
+                                
+                            </RadioGroup>
+                        </Grid>
+                        <Grid item xs={12} md={10}>
+                        <TextField
+                  fullWidth
+                  id="notes1"
+                  label="Notes"
+                  name="Notes"
+                  autoComplete="Notes"
+                />
+                    </Grid>
+                    <Grid  item xs={12} md={2}>
+                        <FormLabel id="demo-row-radio-buttons-group-label">Pass Matric/grade 12</FormLabel>
+                            <RadioGroup
+                                row
+                                aria-labelledby="demo-row-radio-buttons-group-label"
+                                name="row-radio-buttons-group"
+                            >
+                                <FormControlLabel value="Qualify" control={<Radio />} label="Qualify" />
+                                <FormControlLabel value="DNQ" control={<Radio />} label="DNQ" />
+                                
+                            </RadioGroup>
+                        </Grid>
+                        <Grid item xs={12} md={10}>
+                        <TextField
+                  fullWidth
+                  id="notes1"
+                  label="Notes"
+                  name="Notes"
+                  autoComplete="Notes"
                 />
                     </Grid>
                     
