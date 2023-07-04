@@ -1,0 +1,9 @@
+input{
+    background-color: #1976D3;
+    color:white;
+    border-color: white;
+}
+input::placeholder{
+    color: white
+    ;
+}

@@ -11,7 +11,7 @@ function App() {
     useEffect(()=>{
         auth.onAuthStateChanged((user)=>{
             if(user){
-                setUserName(user.displayName);
+                setUserName(user.displayMail);
             }
             else{
                 setUserName("");
@@ -24,8 +24,8 @@ function App() {
         <Routes>
           <Route path = "/login" element={<Login/>}/>
           <Route path = "/signup" element={<Signup/>}/>
-          <Route path = "/" element={<Home name={userName}/>}/>
-          <Route path='/user' element={<User/>}/>
+          <Route path = "/" element={<Home Mail={userName}/>}/>
+          <Route path='/user' element={<User Mail={userName}/>}/>
           
         </Routes>
       </Router>

@@ -2,7 +2,7 @@ import { useCollapse } from 'react-collapsed'
 import './collapse.css';
 import React , { useState } from 'react';
 import { db } from '../firebase';
-import { addDoc, setDoc } from 'firebase/firestore';
+import { addDoc } from 'firebase/firestore';
 import { collection } from 'firebase/firestore';
 
 
@@ -20,8 +20,9 @@ function FixedTermContact(props){
         name3:""
       });
       const CollectionRef = collection(db, "fixedTermContact")
-    const addF= (newVal)=>{
-        return ;
+    const addFile= (newVal)=>{
+        return addDoc(CollectionRef, newVal);
+
     }
       const submitHandle= async()=>{
         const name = values.name;
@@ -36,13 +37,13 @@ function FixedTermContact(props){
             endDate,
             fillDate    
         };
-        await setDoc(CollectionRef, newVal);
+        await addFile(newVal);
 
       }
 
   return (
 
-<div style={{border:'2px', borderColor:'black',padding:'2px'}}>
+<div style={{border:'2px', borderColor:'black',padding:'2px', overflow:'hidden'}}>
 <div className="collapsible" >
         <div className="header"  {...getToggleProps()}>
             <p>
@@ -56,7 +57,7 @@ function FixedTermContact(props){
             <div className="content">
                 
                 <h5>PRIVATE AND CONFIDENTIAL</h5>
-                <form>
+                <form onSubmit={submitHandle}>
                 <p>Name and Surname: <input type="text" name="name" 
                 onChange={(event)=>setValues((prev)=> ({...prev, name: event.target.value}))}
                 /></p>
@@ -294,20 +295,21 @@ function FixedTermContact(props){
                 
                 />, hereby agree to the terms and conditions of employment as contained and detailed in this employment agreement as well as Annexures A, B and C hereto.</p>
                 <br/><br/>
-                <div style={{display: 'flex', justifyContent: 'space-between', paddingLeft: 50,paddingRight:50}}>
-                    <div>
+                {/* <div style={{flex:1,display: 'flex', justifyContent: 'space-between', paddingLeft: '5%',paddingRight:'5%', width:'90%'}}> */}
+                   
                 <p>Signature</p>
                 <input  type="file" name="name" />
-                </div >
-                <div>
+                {/* </div > */}
+                {/* <div style={{width:'70%'}}> */}
                 <p>Date</p>
                 <input type="text" name="name"
                 onChange={(event)=>setValues((prev)=> ({...prev, date3: event.target.value}))}
                 />
-                </div>
-                </div>
+                {/* </div> */}
+                {/* </div> */}
                 <br/><br/>
-                <input style={{marginLeft:20,backgroundColor:'#1976D3', borderColor:'#1976D3', borderRadius:20, color:'white', paddingLeft:10,paddingRight:10, paddingTop:5, paddingBottom:5, fontSize:20}} onClick={submitHandle} type='submit'/>
+                <input style={{
+  marginLeft:20,backgroundColor:'#1976D3', borderColor:'#1976D3', borderRadius:20, color:'white', paddingLeft:10,paddingRight:10, paddingTop:5, paddingBottom:5, fontSize:20}}  type='submit'/>
                 <br/><br/>
                 </form>
             </div>
