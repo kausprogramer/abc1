@@ -2,6 +2,7 @@ import React from 'react';
 import Navi from './navbar';
 import FixedTermContact from './fixedTermContact';
 import { Route } from 'react-router-dom';
+import AssesmentAndInterview from './assesmentAndInterview';
 
 
 function User(route) {
@@ -12,6 +13,7 @@ function User(route) {
     <div >
       <Navi/>
       <FixedTermContact />
+      <AssesmentAndInterview/>
       </div>
   );
 }
